@@ -1,0 +1,7 @@
+lib
+*.o
+*~
+moc_*
+*.moc
+Makefile
+log
