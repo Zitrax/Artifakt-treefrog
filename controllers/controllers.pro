@@ -13,3 +13,5 @@ include(../appbase.pri)
 
 HEADERS += applicationcontroller.h
 SOURCES += applicationcontroller.cpp
+HEADERS += artifaktcontroller.h
+SOURCES += artifaktcontroller.cpp

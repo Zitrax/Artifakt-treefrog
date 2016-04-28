@@ -11,3 +11,6 @@ LIBS += -L../lib -lhelper
 
 include(../appbase.pri)
 
+HEADERS += sqlobjects/artifaktobject.h
+HEADERS += artifakt.h
+SOURCES += artifakt.cpp

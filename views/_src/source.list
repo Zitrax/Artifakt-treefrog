@@ -1,0 +1,8 @@
+HEADERS += artifakt_editView.moc
+SOURCES += artifakt_editView.cpp
+HEADERS += artifakt_entryView.moc
+SOURCES += artifakt_entryView.cpp
+HEADERS += artifakt_indexView.moc
+SOURCES += artifakt_indexView.cpp
+HEADERS += artifakt_showView.moc
+SOURCES += artifakt_showView.cpp
