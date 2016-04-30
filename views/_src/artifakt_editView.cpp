@@ -14,7 +14,7 @@ public:
 
 QString artifakt_editView::toString()
 {
-  responsebody.reserve(1677);
+  responsebody.reserve(1686);
   responsebody += QLatin1String("<!DOCTYPE html>\n");
     tfetch(QVariantMap, artifakt);
   responsebody += QLatin1String("<html>\n<head>\n  <meta http-equiv=\"content-type\" content=\"text/html;charset=UTF-8\" />\n  <title>");
@@ -27,10 +27,10 @@ QString artifakt_editView::toString()
   responsebody += QVariant(formTag(urla("save", artifakt["id"]), Tf::Post)).toString();
   responsebody += QLatin1String("\n  <p>\n    <label>ID<br /><input type=\"text\" name=\"artifakt[id]\" value=\"");
   responsebody += THttpUtility::htmlEscape(artifakt["id"]);
-  responsebody += QLatin1String("\" readonly=\"readonly\" /></label>\n  </p>\n  <p>\n    <label>Title<br /><input type=\"text\" name=\"artifakt[title]\" value=\"");
-  responsebody += THttpUtility::htmlEscape(artifakt["title"]);
-  responsebody += QLatin1String("\" /></label>\n  </p>\n  <p>\n    <label>Body<br /><input type=\"text\" name=\"artifakt[body]\" value=\"");
-  responsebody += THttpUtility::htmlEscape(artifakt["body"]);
+  responsebody += QLatin1String("\" readonly=\"readonly\" /></label>\n  </p>\n  <p>\n    <label>Filename<br /><input type=\"text\" name=\"artifakt[filename]\" value=\"");
+  responsebody += THttpUtility::htmlEscape(artifakt["filename"]);
+  responsebody += QLatin1String("\" /></label>\n  </p>\n  <p>\n    <label>Sha1<br /><input type=\"text\" name=\"artifakt[sha1]\" value=\"");
+  responsebody += THttpUtility::htmlEscape(artifakt["sha1"]);
   responsebody += QLatin1String("\" /></label>\n  </p>\n  <p>\n    <input type=\"submit\" value=\"Update\" />\n  </p>\n</form>\n\n");
   responsebody += QVariant(linkTo("Show", urla("show", artifakt["id"]))).toString();
   responsebody += QLatin1String(" |\n");

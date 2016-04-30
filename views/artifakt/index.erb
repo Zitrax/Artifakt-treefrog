@@ -14,15 +14,15 @@
 <table border="1" cellpadding="5" style="border: 1px #d0d0d0 solid; border-collapse: collapse;">
   <tr>
     <th>ID</th>
-    <th>Title</th>
-    <th>Body</th>
+    <th>Filename</th>
+    <th>Sha1</th>
   </tr>
 <% tfetch(QList<Artifakt>, artifaktList); %>
 <% for (const auto &i : artifaktList) { %>
   <tr>
     <td><%= i.id() %></td>
-    <td><%= i.title() %></td>
-    <td><%= i.body() %></td>
+    <td><%= i.filename() %></td>
+    <td><%= i.sha1() %></td>
     <td>
       <%== linkTo("Show", urla("show", i.id())) %>
       <%== linkTo("Edit", urla("edit", i.id())) %>

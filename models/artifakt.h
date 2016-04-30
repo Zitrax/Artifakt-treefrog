@@ -22,10 +22,10 @@ public:
     ~Artifakt();
 
     int id() const;
-    QString title() const;
-    void setTitle(const QString &title);
-    QString body() const;
-    void setBody(const QString &body);
+    QString filename() const;
+    void setFilename(const QString &filename);
+    QString sha1() const;
+    void setSha1(const QString &sha1);
     QDateTime createdAt() const;
     QDateTime updatedAt() const;
     int lockRevision() const;
@@ -36,7 +36,7 @@ public:
     bool save()   { return TAbstractModel::save(); }
     bool remove() { return TAbstractModel::remove(); }
 
-    static Artifakt create(const QString &title, const QString &body);
+    static Artifakt create(const QString &filename, const QString &sha1);
     static Artifakt create(const QVariantMap &values);
     static Artifakt get(int id);
     static Artifakt get(int id, int lockRevision);

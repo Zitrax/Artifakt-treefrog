@@ -14,7 +14,7 @@ public:
 
 QString artifakt_entryView::toString()
 {
-  responsebody.reserve(1288);
+  responsebody.reserve(1297);
   responsebody += QLatin1String("<!DOCTYPE html>\n");
     tfetch(QVariantMap, artifakt);
   responsebody += QLatin1String("<html>\n<head>\n  <meta http-equiv=\"content-type\" content=\"text/html;charset=UTF-8\" />\n  <title>");
@@ -25,10 +25,10 @@ QString artifakt_entryView::toString()
   tehex(notice);
   responsebody += QLatin1String("</p>\n\n<h1>New Artifakt</h1>\n\n");
   responsebody += QVariant(formTag(urla("create"), Tf::Post)).toString();
-  responsebody += QLatin1String("\n  <p>\n    <label>Title<br /><input name=\"artifakt[title]\" value=\"");
-  responsebody += THttpUtility::htmlEscape(artifakt["title"]);
-  responsebody += QLatin1String("\" /></label>\n  </p>\n  <p>\n    <label>Body<br /><input name=\"artifakt[body]\" value=\"");
-  responsebody += THttpUtility::htmlEscape(artifakt["body"]);
+  responsebody += QLatin1String("\n  <p>\n    <label>Filename<br /><input name=\"artifakt[filename]\" value=\"");
+  responsebody += THttpUtility::htmlEscape(artifakt["filename"]);
+  responsebody += QLatin1String("\" /></label>\n  </p>\n  <p>\n    <label>Sha1<br /><input name=\"artifakt[sha1]\" value=\"");
+  responsebody += THttpUtility::htmlEscape(artifakt["sha1"]);
   responsebody += QLatin1String("\" /></label>\n  </p>\n  <p>\n    <input type=\"submit\" value=\"Create\" />\n  </p>\n</form>\n\n");
   responsebody += QVariant(linkTo("Back", urla("index"))).toString();
   responsebody += QLatin1String("\n\n</body>\n</html>\n");

@@ -28,24 +28,24 @@ int Artifakt::id() const
     return d->id;
 }
 
-QString Artifakt::title() const
+QString Artifakt::filename() const
 {
-    return d->title;
+    return d->filename;
 }
 
-void Artifakt::setTitle(const QString &title)
+void Artifakt::setFilename(const QString &filename)
 {
-    d->title = title;
+    d->filename = filename;
 }
 
-QString Artifakt::body() const
+QString Artifakt::sha1() const
 {
-    return d->body;
+    return d->sha1;
 }
 
-void Artifakt::setBody(const QString &body)
+void Artifakt::setSha1(const QString &sha1)
 {
-    d->body = body;
+    d->sha1 = sha1;
 }
 
 QDateTime Artifakt::createdAt() const
@@ -69,11 +69,11 @@ Artifakt &Artifakt::operator=(const Artifakt &other)
     return *this;
 }
 
-Artifakt Artifakt::create(const QString &title, const QString &body)
+Artifakt Artifakt::create(const QString &filename, const QString &sha1)
 {
     ArtifaktObject obj;
-    obj.title = title;
-    obj.body = body;
+    obj.filename = filename;
+    obj.sha1 = sha1;
     if (!obj.create()) {
         return Artifakt();
     }
